@@ -12,7 +12,7 @@
   },
   "projection": {
     "type": "conicEqualArea",
-    "center": [ 20, 50 ],
+    "center": [ 15, 51 ],
     "parallels": [ 40, 65 ],
     "scale": 860
   },
