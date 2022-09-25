@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "EU Energy Imports Dependence",
+  "title": "EU Energy Import Dependence",
   "width": 600,
   "height": 500,
   "data": {
@@ -25,34 +25,12 @@
         "url": "https://raw.githubusercontent.com/SctMccoll/Week-9-Homework/main/js/EU.topojson",
         "format": {
           "type": "topojson",
-          "feature": "ne_110m_graticules_5"
-        }
-      },
-      "projection": {
-        "type": "conicEqualArea",
-        "center": [ 15, 51 ],
-        "parallels": [ 40, 65 ],
-        "scale": 860
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "None",
-        "stroke": "lightgray"
-      },
-      "encoding": {
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-9-Homework/main/js/EU.topojson",
-        "format": {
-          "type": "topojson",
           "feature": "ne_50m_admin_0_countries"
         }
       },
       "transform": [
         {
-          "calculate": "'EU data is not available in ' + datum.properties.NAME",
+          "calculate": "'Data is not available in ' + datum.properties.NAME",
           "as": "note"
         }
       ],
@@ -92,7 +70,7 @@
         { "filter": "datum.YEAR==year" },
         {
           "calculate": "if(datum.PC_DEP!=null,max(datum.PC_DEP/100,-1),null)",
-          "as": "Energy dependence"
+          "as": "Energy Dependence"
         },
         {
           "calculate": "if(datum.PC_DEP!=null,datum.PC_DEP/100,null)",
@@ -106,7 +84,10 @@
         "parallels": [ 40, 65 ],
         "scale": 860
       },
-      "mark": "geoshape",
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white"
+      },
       "encoding": {
         "color": {
           "field": "Energy Dependence",
@@ -127,11 +108,10 @@
             "field": "Tooltip Dependence",
             "type": "quantitative",
             "format": ".1%",
-            "title": "Energy Import Dependence"
+            "title": "Dependence"
           }
         ]
       }
     }
-
   ]
 }
