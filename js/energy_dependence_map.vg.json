@@ -106,7 +106,7 @@
         "parallels": [ 40, 65 ],
         "scale": 860
       },
-      "mark": {"type": "geoshape","stroke": "white"},
+      "mark": "geoshape",
       "encoding": {
         "color": {
           "field": "Energy Dependence",
