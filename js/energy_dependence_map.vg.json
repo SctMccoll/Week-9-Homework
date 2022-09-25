@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "EU Energy Imports Dependency",
+  "title": "EU Energy Imports Dependence",
   "width": 600,
   "height": 500,
   "data": {
@@ -92,7 +92,7 @@
         { "filter": "datum.YEAR==year" },
         {
           "calculate": "if(datum.PC_DEP!=null,max(datum.PC_DEP/100,-1),null)",
-          "as": "Energy Dependencey"
+          "as": "Energy dependence"
         },
         {
           "calculate": "if(datum.PC_DEP!=null,datum.PC_DEP/100,null)",
@@ -109,7 +109,7 @@
       "mark": "geoshape",
       "encoding": {
         "color": {
-          "field": "Energy Dependencey",
+          "field": "Energy Dependence",
           "type": "quantitative",
           "scale": {
             "scheme": "blueorange",
@@ -127,7 +127,7 @@
             "field": "Tooltip Dependence",
             "type": "quantitative",
             "format": ".1%",
-            "title": "Energy Import Dependencey"
+            "title": "Energy Import Dependence"
           }
         ]
       }
