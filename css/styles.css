@@ -1,3 +1,6 @@
-﻿body
-{
+﻿body {
+    energy_dependence_map
+        {
+            top:100px;
+        }
 }
